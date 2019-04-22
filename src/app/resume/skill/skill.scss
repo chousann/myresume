@@ -1,0 +1,25 @@
+@import '../../../styles/constants';
+
+
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .flex-col {
+    display: block;
+    flex-basis: 220px;
+    flex-grow: 1;
+  }
+  .flex-col-1 {
+    display: block;
+    flex-basis: 70px;
+    flex-grow: 0;
+  }
+  .flex-col-2 {
+    display: block;
+    flex-basis: 100px;
+    flex-grow: 1;
+  }
+}

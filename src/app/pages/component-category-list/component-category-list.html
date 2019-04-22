@@ -1,0 +1,79 @@
+<!-- <div class="docs-component-category-list-summary">{{_categoryListSummary}}</div>
+<div class="docs-component-category-list">
+  <a *ngFor="let category of docItems.getCategories((params | async)?.section)"
+     class="docs-component-category-list-item"
+    [routerLink]="['../', category.id]">
+    <mat-card class="docs-component-category-list-card">
+      <mat-card-title>{{category.name}}</mat-card-title>
+      <mat-card-content class="docs-component-category-list-card-summary">{{category.summary}}</mat-card-content>
+    </mat-card>
+  </a>
+</div> -->
+
+<div class="docs-component-category-list-summary">巴拉巴拉小魔仙</div>
+<div class="docs-component-category-list">
+  <a class="docs-component-category-list-item" name="info">
+    <mat-card class="docs-component-category-list-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>个人信息</mat-card-title>
+        <mat-card-subtitle>个人信息</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+
+      <mat-card-content class="docs-component-category-list-card-summary">summary: ''</mat-card-content>
+    </mat-card>
+  </a>
+  <a class="docs-component-category-list-item" name="education">
+    <mat-card class="docs-component-category-list-card">
+      <mat-card-title>教育背景</mat-card-title>
+      <mat-card-content class="docs-component-category-list-card-summary">
+          <app-education></app-education>
+      </mat-card-content>
+    </mat-card>
+  </a>
+  <a class="docs-component-category-list-item" name="job">
+    <mat-card class="docs-component-category-list-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>工作经历</mat-card-title>
+        <mat-card-subtitle>工作经历</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="docs-component-category-list-card-summary">
+        <app-job></app-job>
+      </mat-card-content>
+    </mat-card>
+  </a>
+  <a class="docs-component-category-list-item" name="project">
+    <mat-card class="docs-component-category-list-card">
+      <mat-card-title>项目经验</mat-card-title>
+      <mat-card-content class="docs-component-category-list-card-summary">
+        <app-project></app-project>
+      </mat-card-content>
+    </mat-card>
+  </a>
+  <a class="docs-component-category-list-item" name="skill">
+    <mat-card class="docs-component-category-list-card">
+      <mat-card-title>职业技能</mat-card-title>
+      <mat-card-content class="docs-component-category-list-card-summary">
+        <app-skill></app-skill>
+      </mat-card-content>
+    </mat-card>
+  </a>
+  <a class="docs-component-category-list-item" name="intention">
+    <mat-card class="docs-component-category-list-card">
+      <mat-card-title>求职意向</mat-card-title>
+      <mat-card-content class="docs-component-category-list-card-summary">
+        <app-intention></app-intention>
+      </mat-card-content>
+    </mat-card>
+  </a>
+  <a class="docs-component-category-list-item" name="selfevaluation">
+    <mat-card class="docs-component-category-list-card">
+      <mat-card-title>自我评价</mat-card-title>
+      <mat-card-content class="docs-component-category-list-card-summary">
+        <app-selfevaluation></app-selfevaluation>
+      </mat-card-content>
+    </mat-card>
+  </a>
+</div>

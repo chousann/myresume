@@ -1,0 +1,36 @@
+<!-- TODO: figure out if the <nav> should go inside of a <header> element. -->
+<nav class="docs-navbar-header"
+     [class.is-next-version]="isNextVersion">
+  <a mat-button class="docs-button" routerLink="/" aria-label="我的简历">
+    <img class="docs-angular-logo"
+         src="../../../assets/img/zxs.svg"
+         alt="angular">
+    <span>我的简历</span>
+  </a>
+  <!-- <a mat-button class="docs-navbar-hide-small docs-button"
+     *ngFor="let key of sectionKeys"
+     [routerLink]="key">{{sections[key].name}}</a> -->
+  <a mat-button class="docs-navbar-hide-small docs-button">  你好！！！</a>
+  <div class="flex-spacer"></div>
+  <!-- <version-picker></version-picker> -->
+  <theme-picker></theme-picker>
+  <a mat-button class="docs-button docs-navbar-hide-small" href="https://github.com/chousann"
+     aria-label="GitHub Repository">
+    <img class="docs-angular-logo"
+         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
+         alt="angular">
+    GitHub
+  </a>
+  <a mat-icon-button class="docs-button docs-navbar-show-small"
+     href="https://github.com/chousann" aria-label="GitHub Repository">
+    <img class="docs-angular-logo"
+         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
+         alt="angular">
+  </a>
+</nav>
+<nav class="docs-navbar docs-navbar-show-small">
+  <!-- <a mat-button class="docs-navbar-link"
+    *ngFor="let key of sectionKeys"
+    [routerLink]="key">{{sections[key].name}}</a> -->
+  <a mat-button class="docs-navbar-link">  你好！！！</a>
+</nav>

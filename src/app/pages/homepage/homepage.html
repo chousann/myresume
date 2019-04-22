@@ -1,0 +1,64 @@
+<header class="docs-header-background" [class.is-next-version]="isNextVersion">
+  <div class="docs-header-section">
+    <div class="docs-header-headline flex">
+      <div class="flex-item-left">
+        <img src="../../../assets/img/zxs.png" />
+      </div>
+      <div class="flex-item-right">
+        <h1 class="mat-h1">你好！我是ZXS，</h1>
+        <h2>这是我的求职简历。如果你使用的不是现代浏览器，访问这个页面时可能出现排版混乱的现象。为了不影响阅读，您可以查看pdf文件</h2>
+      </div>
+    </div>
+    <div class="docs-header-start">
+      <a mat-raised-button class="docs-button" routerLink="/components">我的简历</a>
+      <p class="warning">（注意个人隐私保护，请不要把本页面链接透露给非相关人员，谢谢理解！！！）</p>
+    </div>
+  </div>
+</header>
+<div *ngIf="false">
+<div class="docs-homepage-promo" *ngIf="false">
+  <div class="docs-homepage-row">
+    <div class="docs-homepage-promo-img">
+      <docs-svg-viewer src="../assets/img/homepage/sprintzerotoapp.svg" scaleToContainer="true"></docs-svg-viewer>
+    </div>
+    <div class="docs-homepage-promo-desc">
+      <h2>Sprint from Zero to App</h2>
+      <p>Hit the ground running with comprehensive, modern UI components that work across
+        the web, mobile and desktop.</p>
+    </div>
+  </div>
+  <div class="docs-homepage-row docs-homepage-reverse-row">
+    <div class="docs-homepage-promo-img">
+      <docs-svg-viewer src="../assets/img/homepage/fastandconsistent.svg" scaleToContainer="true"></docs-svg-viewer>
+    </div>
+    <div class="docs-homepage-promo-desc">
+      <h2>Fast and Consistent</h2>
+      <p>Finely tuned performance, because every millisecond counts. Fully tested across
+        modern browsers.</p>
+    </div>
+  </div>
+  <div class="docs-homepage-row">
+    <div class="docs-homepage-promo-img">
+      <docs-svg-viewer src="../assets/img/homepage/versatile.svg" scaleToContainer="true"></docs-svg-viewer>
+    </div>
+    <div class="docs-homepage-promo-desc">
+      <h2>Versatile</h2>
+      <p>Themable, for when you need to stay on brand or just have a favorite color.
+        Accessible and internationalized so that all users are welcome.</p>
+    </div>
+  </div>
+  <div class="docs-homepage-row docs-homepage-reverse-row">
+    <div class="docs-homepage-promo-img">
+      <docs-svg-viewer src="../assets/img/homepage/optimized.svg" scaleToContainer="true"></docs-svg-viewer>
+    </div>
+    <div class="docs-homepage-promo-desc">
+      <h2>Optimized for Angular</h2>
+      <p>Built by the Angular team to integrate seamlessly with Angular.</p>
+    </div>
+  </div>
+  <div class="docs-homepage-bottom-start">
+    <a mat-raised-button class="docs-button" routerLink="/guide/getting-started">Get started</a>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

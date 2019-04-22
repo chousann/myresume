@@ -1,0 +1,65 @@
+<div class="docs-component-viewer-nav">
+  <div class="docs-component-viewer-nav-content">
+    <!-- <nav *ngFor="let category of docItems.getCategories((params | async)?.SECTIONS); let last = last;">
+      <button cdkAccordionItem #panel="cdkAccordionItem" (click)="panel.toggle()" expanded="true"
+              class="docs-nav-content-btn"
+              [attr.aria-label]="category.name + ', section toggle'"
+              [attr.aria-controls]="'panel-' + category.id"
+              [attr.aria-expanded]="panel.expanded">
+        {{category.name}}
+        <mat-icon>{{panel.expanded ? 'keyboard_arrow_up' :  'keyboard_arrow_down'}}</mat-icon>
+      </button>
+      <ul [@bodyExpansion]="panel.expanded ? 'expanded' : 'collapsed'" id="panel-{{category.id}}">
+        <li *ngFor="let component of category.items">
+          <a [routerLink]="'/' + (params | async)?.section+ '/' + component.id"
+            routerLinkActive="docs-component-viewer-sidenav-item-selected">
+            {{component.name}}
+          </a>
+        </li>
+      </ul>
+      <hr *ngIf="!last" />
+    </nav> -->
+    <div class="logo">
+      <img src="../../../assets/img/zxs.png" />
+    </div>
+
+    <div class="flex-logo">
+
+      <mat-icon [ngClass]="{'red': selectinfo === '手机： 123456789'}" class="docs-angular-logo"
+        (click)="onclick('手机： 123456789')">phone</mat-icon>
+      <mat-icon [ngClass]="{'red': selectinfo === '邮箱： 123456789'}" class="docs-angular-logo"
+        (click)="onclick('邮箱： 123456789')">email</mat-icon>
+      <mat-icon [ngClass]="{'red': selectinfo === '微信： 123456789'}" class="docs-angular-logo"
+        (click)="onclick('微信： 123456789')">group</mat-icon>
+      <img [ngClass]="{'red': selectinfo === 'github： 123456789'}" class="docs-angular-logo"
+        (click)="onclick('github： 123456789')"
+        src="../../../assets/img/homepage/github-circle-white-transparent.svg" alt="angular">
+      <i class="fas fa-camera"></i>
+    </div>
+
+    <div class="selectinfo">
+      {{selectinfo}}
+    </div>
+
+
+    <nav>
+      <button cdkAccordionItem #panel="cdkAccordionItem" (click)="panel.toggle()" expanded="true"
+        class="docs-nav-content-btn" [attr.aria-label]="'resume'" [attr.aria-controls]="'panel-resume'"
+        [attr.aria-expanded]="panel.expanded">
+        简历
+        <mat-icon>{{panel.expanded ? 'keyboard_arrow_up' :  'keyboard_arrow_down'}}</mat-icon>
+      </button>
+      <ul [@bodyExpansion]="panel.expanded ? 'expanded' : 'collapsed'" id="panel-resume">
+        <li *ngFor="let section of sections">
+          <a [href]="'components/categories#' + section.id"
+            routerLinkActive="docs-component-viewer-sidenav-item-selected">
+            {{section.name}}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div>
+    <img class="docs-angular-logo" src="../../../assets/img/zxs.svg" alt="angular">
+  </div>
+</div>
