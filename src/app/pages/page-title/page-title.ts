@@ -15,7 +15,8 @@ export class ComponentPageTitle {
     if (title !== '') {
       title = `${title} | `;
     }
-    this.bodyTitle.setTitle(`${title} ZXS`);
+    // this.bodyTitle.setTitle(`${title} ZXS`);
+    this.bodyTitle.setTitle(`ZXS`);
   }
 
   constructor(private bodyTitle: Title) { }

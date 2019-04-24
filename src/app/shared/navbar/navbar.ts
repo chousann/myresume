@@ -1,6 +1,6 @@
 import {Component, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatButtonModule, MatMenuModule} from '@angular/material';
+import {MatButtonModule, MatMenuModule, MatIconModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
 import {ThemePickerModule} from '../theme-picker/theme-picker';
 import {VersionPickerModule} from '../version-picker';
@@ -29,6 +29,7 @@ export class NavBar {
   imports: [
     MatButtonModule,
     MatMenuModule,
+    MatIconModule,
     RouterModule,
     ThemePickerModule,
     VersionPickerModule,

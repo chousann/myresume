@@ -29,12 +29,13 @@
         (click)="onclick('手机： 123456789')">phone</mat-icon>
       <mat-icon [ngClass]="{'red': selectinfo === '邮箱： 123456789'}" class="docs-angular-logo"
         (click)="onclick('邮箱： 123456789')">email</mat-icon>
-      <mat-icon [ngClass]="{'red': selectinfo === '微信： 123456789'}" class="docs-angular-logo"
-        (click)="onclick('微信： 123456789')">group</mat-icon>
-      <img [ngClass]="{'red': selectinfo === 'github： 123456789'}" class="docs-angular-logo"
+      <i [ngClass]="{'red': selectinfo === '微信： 123456789'}" class="fa fa-weixin fa-icon docs-angular-logo"
+        (click)="onclick('微信： 123456789')"></i>
+      <!-- <img [ngClass]="{'red': selectinfo === 'github： 123456789'}" class="docs-angular-logo"
         (click)="onclick('github： 123456789')"
-        src="../../../assets/img/homepage/github-circle-white-transparent.svg" alt="angular">
-      <i class="fas fa-camera"></i>
+        src="../../../assets/img/homepage/github-circle-white-transparent.svg" alt="angular"> -->
+      <i [ngClass]="{'red': selectinfo === 'github： 123456789'}" class="fa fa-github fa-icon docs-angular-logo"
+        (click)="onclick('github： 123456789')"></i>
     </div>
 
     <div class="selectinfo">
@@ -59,7 +60,7 @@
       </ul>
     </nav>
   </div>
-  <div>
+  <!-- <div>
     <img class="docs-angular-logo" src="../../../assets/img/zxs.svg" alt="angular">
-  </div>
+  </div> -->
 </div>

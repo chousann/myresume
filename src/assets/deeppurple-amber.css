@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url(~@angular/material/prebuilt-themes/indigo-pink.css);
-@import url(~@angular/material/prebuilt-themes/deeppurple-amber.css);
-@import url(~@angular/material/prebuilt-themes/pink-bluegrey.css);
-@import url(~@angular/material/prebuilt-themes/purple-green.css);
+
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -2339,26 +2336,6 @@ app-component-viewer {
 .docs-markdown-td {
   border: 1px solid rgba(0, 0, 0, 0.03); }
 
-example-viewer .docs-example-viewer-wrapper {
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
-  margin: 4px; }
-
-example-viewer .docs-example-viewer-title {
-  color: rgba(0, 0, 0, 0.54);
-  background: rgba(0, 0, 0, 0.03); }
-
-example-viewer .docs-example-source-copy {
-  color: rgba(0, 0, 0, 0.38);
-  right: 8px; }
-  [dir='rtl'] example-viewer .docs-example-source-copy {
-    right: auto;
-    left: 8px; }
-
-example-viewer .docs-example-source {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  overflow: auto; }
-
 app-footer .docs-footer-links a {
   color: white; }
 
@@ -2389,35 +2366,3 @@ app-navbar {
     transition: color 100ms; }
     .docs-toc-container .docs-link:hover, .docs-toc-container .docs-link.docs-active {
       color: #673ab7; }
-
-app-root {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 56px;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-
-app-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2; }
-
-app-root > app-component-sidenav {
-  flex: 1; }
-
-app-root > app-homepage,
-app-root > app-guides,
-app-root > guide-viewer {
-  overflow-y: auto; }
-
-@media (max-width: 720px) {
-  app-root {
-    top: 92px; }
-  app-root > app-homepage,
-  app-root > app-guides,
-  app-root > guide-viewer {
-    overflow-y: visible; } }
