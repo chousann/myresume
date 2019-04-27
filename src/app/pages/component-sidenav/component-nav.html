@@ -25,21 +25,30 @@
 
     <div class="flex-logo">
 
-      <mat-icon [ngClass]="{'red': selectinfo === '手机： 123456789'}" class="docs-angular-logo"
-        (click)="onclick('手机： 123456789')">phone</mat-icon>
-      <mat-icon [ngClass]="{'red': selectinfo === '邮箱： 123456789'}" class="docs-angular-logo"
-        (click)="onclick('邮箱： 123456789')">email</mat-icon>
-      <i [ngClass]="{'red': selectinfo === '微信： 123456789'}" class="fa fa-weixin fa-icon docs-angular-logo"
-        (click)="onclick('微信： 123456789')"></i>
+      <mat-icon [ngClass]="{'red': selectinfo === '手机'}" class="docs-angular-logo"
+        (click)="onclick('手机')">phone</mat-icon>
+      <mat-icon [ngClass]="{'red': selectinfo === '邮箱'}" class="docs-angular-logo"
+        (click)="onclick('邮箱')">email</mat-icon>
+      <i [ngClass]="{'red': selectinfo === '微信'}" class="fa fa-weixin fa-icon docs-angular-logo"
+        (click)="onclick('微信')"></i>
       <!-- <img [ngClass]="{'red': selectinfo === 'github： 123456789'}" class="docs-angular-logo"
         (click)="onclick('github： 123456789')"
         src="../../../assets/img/homepage/github-circle-white-transparent.svg" alt="angular"> -->
-      <i [ngClass]="{'red': selectinfo === 'github： 123456789'}" class="fa fa-github fa-icon docs-angular-logo"
-        (click)="onclick('github： 123456789')"></i>
+      <i [ngClass]="{'red': selectinfo === 'github'}" class="fa fa-github fa-icon docs-angular-logo"
+        (click)="onclick('github')"></i>
     </div>
 
-    <div class="selectinfo">
-      {{selectinfo}}
+    <div class="selectinfo" *ngIf="selectinfo === '手机'">
+      <a [href]="'tel:' + infoModel.aplData.phone">手机： {{infoModel.aplData.phone}}</a>
+    </div>
+    <div class="selectinfo" *ngIf="selectinfo === '邮箱'">
+      <a [href]="'mailto:' + infoModel.aplData.email">邮箱： {{infoModel.aplData.email}}</a>
+    </div>
+    <div class="selectinfo" *ngIf="selectinfo === '微信'">
+      微信： {{infoModel.aplData.wechat}}
+    </div>
+    <div class="selectinfo" *ngIf="selectinfo === 'github'">
+      <a [href]="infoModel.aplData.github">github： {{infoModel.aplData.github}}</a>
     </div>
 
 

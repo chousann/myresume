@@ -1,19 +1,21 @@
 import {
   Component, Input, NgZone, ViewEncapsulation, ViewChild, OnInit, NgModule, OnDestroy
 } from '@angular/core';
-import {DocumentationItems} from '../../shared/documentation-items/documentation-items';
-import {MatSidenav, MatSidenavModule, MatIconModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ActivatedRoute, Params, Router, RouterModule} from '@angular/router';
-import {CommonModule} from '@angular/common';
-import {ComponentHeaderModule} from '../component-page-header/component-page-header';
-import {FooterModule} from '../../shared/footer/footer';
-import {Observable, Subject, combineLatest} from 'rxjs';
-import {switchMap, takeUntil, startWith, map} from 'rxjs/operators';
-import {trigger, animate, state, style, transition} from '@angular/animations';
-import {CdkAccordionModule} from '@angular/cdk/accordion';
-import {BreakpointObserver} from '@angular/cdk/layout';
-import {SECTIONS} from '../../resume/resume-items'
+import { DocumentationItems } from '../../shared/documentation-items/documentation-items';
+import { MatSidenav, MatSidenavModule, MatIconModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ComponentHeaderModule } from '../component-page-header/component-page-header';
+import { FooterModule } from '../../shared/footer/footer';
+import { Observable, Subject, combineLatest } from 'rxjs';
+import { switchMap, takeUntil, startWith, map } from 'rxjs/operators';
+import { trigger, animate, state, style, transition } from '@angular/animations';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { SECTIONS } from '../../resume/resume-items'
+import { WebDto } from 'src/app/dto/info';
+import { InfoModel } from 'src/app/model/info';
 const SMALL_WIDTH_BREAKPOINT = 720;
 
 @Component({
@@ -27,11 +29,11 @@ export class ComponentSidenav implements OnInit {
   isScreenSmall: Observable<boolean>;
 
   constructor(public docItems: DocumentationItems,
-              private _route: ActivatedRoute,
-              zone: NgZone,
-              breakpoints: BreakpointObserver) {
+    private _route: ActivatedRoute,
+    zone: NgZone,
+    breakpoints: BreakpointObserver) {
     this.isScreenSmall = breakpoints.observe(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`)
-        .pipe(map(breakpoint => breakpoint.matches));
+      .pipe(map(breakpoint => breakpoint.matches));
   }
 
   @ViewChild(MatSidenav) sidenav: MatSidenav;
@@ -50,8 +52,8 @@ export class ComponentSidenav implements OnInit {
   templateUrl: './component-nav.html',
   animations: [
     trigger('bodyExpansion', [
-      state('collapsed', style({height: '0px', display: 'none'})),
-      state('expanded', style({height: '*', display: 'block'})),
+      state('collapsed', style({ height: '0px', display: 'none' })),
+      state('expanded', style({ height: '*', display: 'block' })),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4,0.0,0.2,1)')),
     ]),
   ],
@@ -62,20 +64,27 @@ export class ComponentNav implements OnInit, OnDestroy {
   expansions = {};
   private _onDestroy = new Subject<void>();
 
+  public infoModel: InfoModel;
+
   public sections = SECTIONS;
   public selectinfo: string;
-  constructor(public docItems: DocumentationItems,
-              private _router: Router) { }
+  constructor(
+    public docItems: DocumentationItems,
+    private _router: Router,
+    private webDto: WebDto) {
+      this.infoModel = new InfoModel();
+      this.infoModel = this.webDto.infoModel;
+  }
 
   ngOnInit() {
-    this.params = 
-    this.params.pipe(map(data => {
-      let p: Params =[];
-      p['SECTIONS'] = SECTIONS;
-      return p;
-    }));
-    this.selectinfo = '手机： 123456789';
-  } 
+    this.params =
+      this.params.pipe(map(data => {
+        let p: Params = [];
+        p['SECTIONS'] = SECTIONS;
+        return p;
+      }));
+    this.selectinfo = '手机';
+  }
 
   ngOnDestroy() {
 
@@ -101,4 +110,4 @@ export class ComponentNav implements OnInit, OnDestroy {
   declarations: [ComponentSidenav, ComponentNav],
   providers: [DocumentationItems],
 })
-export class ComponentSidenavModule {}
+export class ComponentSidenavModule { }
