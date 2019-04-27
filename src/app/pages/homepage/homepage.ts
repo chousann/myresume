@@ -49,17 +49,33 @@ export class Homepage implements OnInit {
         data: {authKey: ''}
       });
 
-      dialogRef.afterClosed().subscribe(async result => {
+      dialogRef.afterClosed().subscribe(async result1 => {
         console.log(result);
-        if(result === '123456') {
-          let data: InfoModel = await this.infoservice.getInfo().toPromise();
-          this.webDto.infoModel = data;
+        if(result1 === result.commonData.authKey) {
+          let result2: InfoModel = await this.infoservice.getInfo().toPromise();
+          this.webDto.infoModel = result2;
           this.router.navigate(['/components']);
           return;
         }
         return;
       });
 
+      return;
+    } else if (this.webDto.authKey !== result.commonData.authKey) {
+      const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+        width: '250px',
+        data: {authKey: ''}
+      });
+
+      dialogRef.afterClosed().subscribe(async result3 => {
+        console.log(result3);
+        if(result3 === result.commonData.authKey) {
+          let data: InfoModel = await this.infoservice.getInfo().toPromise();
+          this.webDto.infoModel = data;
+          this.router.navigate(['/components']);
+          return;
+        }
+      });
       return;
     }
     this.webDto.infoModel = new InfoModel();

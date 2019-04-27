@@ -11,8 +11,10 @@ export class InfoModel {
 export class CommonData {
   constructor() {
     this.status = '200';
+    this.authKey = '1111';
   }
   status: string;
+  authKey: string;
 }
 
 export class AplData {
