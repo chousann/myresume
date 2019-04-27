@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://zhihui.ngrok.xiaomiqiu.cn'
+  baseUrl: 'https://zhihui.ngrok.xiaomiqiu.cn'
 };
 
 /*
