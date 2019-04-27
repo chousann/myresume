@@ -10,6 +10,7 @@ import { InfoService } from 'src/app/service/info.service';
 import { InfoModel } from 'src/app/model/info';
 import { WebDto } from 'src/app/dto/info';
 import { FormsModule } from '@angular/forms';
+import { LoadingModule, LoadingComponent } from 'src/app/shared/loading/loading';
 export interface DialogData {
   authKey: string;
 }
@@ -41,6 +42,9 @@ export class Homepage implements OnInit {
   }
 
   async onclick() {
+    let loading = this.dialog.open(LoadingComponent, {
+      disableClose: true,
+    });
     let result: InfoModel = await this.infoservice.getInfo().toPromise();
 
     if (result.commonData.status !== '200') {
@@ -55,8 +59,10 @@ export class Homepage implements OnInit {
           let result2: InfoModel = await this.infoservice.getInfo().toPromise();
           this.webDto.infoModel = result2;
           this.router.navigate(['/components']);
+          loading.close();
           return;
         }
+        loading.close();
         return;
       });
 
@@ -73,14 +79,18 @@ export class Homepage implements OnInit {
           let data: InfoModel = await this.infoservice.getInfo().toPromise();
           this.webDto.infoModel = data;
           this.router.navigate(['/components']);
+          loading.close();
           return;
         }
+        loading.close();
+        return;
       });
       return;
     }
     this.webDto.infoModel = new InfoModel();
     this.webDto.infoModel = result;
     this.router.navigate(['/components']);
+    loading.close();
   }
 }
 @Component({
@@ -105,6 +115,7 @@ export class DialogOverviewExampleDialog {
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    LoadingModule
   ],
   exports: [Homepage,
     DialogOverviewExampleDialog],
