@@ -5,7 +5,7 @@ import { ActivatedRoute, Params, RouterModule } from '@angular/router';
 import { DocumentationItems, SECTIONS } from '../../shared/documentation-items/documentation-items';
 import { SvgViewerModule } from '../../shared/svg-viewer/svg-viewer';
 import { Observable, combineLatest, Subscription } from 'rxjs';
-import { InfoModel, Education, ResumeItem } from 'src/app/model/info';
+import { InfoModel, ResumeItem } from 'src/app/model/info';
 import { WebDto } from 'src/app/dto/info';
 
 
@@ -21,7 +21,7 @@ export class EducationComponent implements OnInit, OnDestroy {
     private _route: ActivatedRoute,
     private webDto: WebDto) {
       let infoModel: InfoModel = new InfoModel();
-      this.itemlist = this.webDto.infoModel.aplData.education.resumelist;
+      this.itemlist = this.webDto.infoModel.aplData.education;
   }
 
   ngOnInit() {

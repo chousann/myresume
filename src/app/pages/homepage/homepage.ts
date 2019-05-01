@@ -32,6 +32,7 @@ export class Homepage implements OnInit {
   ) {
     this.activatedRoute.queryParams.subscribe(
       params => {
+        this.webDto.loginId = params.loginId;
         this.webDto.authKey = params.authKey;
       }
     )
@@ -45,39 +46,19 @@ export class Homepage implements OnInit {
     let loading = this.dialog.open(LoadingComponent, {
       disableClose: true,
     });
-    let result: InfoModel = await this.infoservice.getInfo().toPromise();
+    let result: InfoModel = await this.infoservice.getInfo(this.webDto.loginId, this.webDto.authKey).toPromise();
 
     if (result.commonData.status !== '200') {
       const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
         width: '250px',
-        data: {authKey: ''}
+        data: { authKey: '' }
       });
 
       dialogRef.afterClosed().subscribe(async result1 => {
         console.log(result);
-        if(result1 === result.commonData.authKey) {
-          let result2: InfoModel = await this.infoservice.getInfo().toPromise();
+        let result2: InfoModel = await this.infoservice.getInfo('defaultid', result1).toPromise();
+        if (result2.commonData.status === '200') {
           this.webDto.infoModel = result2;
-          this.router.navigate(['/components']);
-          loading.close();
-          return;
-        }
-        loading.close();
-        return;
-      });
-
-      return;
-    } else if (this.webDto.authKey !== result.commonData.authKey) {
-      const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-        width: '250px',
-        data: {authKey: ''}
-      });
-
-      dialogRef.afterClosed().subscribe(async result3 => {
-        console.log(result3);
-        if(result3 === result.commonData.authKey) {
-          let data: InfoModel = await this.infoservice.getInfo().toPromise();
-          this.webDto.infoModel = data;
           this.router.navigate(['/components']);
           loading.close();
           return;

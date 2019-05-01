@@ -21,7 +21,7 @@ export class InfoComponent implements OnInit, OnDestroy {
     private _route: ActivatedRoute,
     private webDto: WebDto) {
     let infoModel: InfoModel = new InfoModel();
-    this.itemlist = this.webDto.infoModel.aplData.education.resumelist;
+    this.itemlist = this.webDto.infoModel.aplData.education;
   }
 
   ngOnInit() {

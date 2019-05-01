@@ -9,6 +9,7 @@ import { InfoModel } from '../model/info';
 )
 export class WebDto {
   infoModel: InfoModel = new InfoModel();
+  loginId: string;
   authKey: string;
 }
 

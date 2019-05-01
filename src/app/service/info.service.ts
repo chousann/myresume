@@ -13,10 +13,10 @@ export class InfoService {
     private http: HttpClient
   ) { }
 
-  getInfo(): Observable<InfoModel>{
+  getInfo(id: string, pwd: string): Observable<InfoModel>{
     let url: string;
-    url = environment.baseUrl + '/api' + '/people';
-    return this.http.get<InfoModel>(url).pipe(map(data => {
+    url = environment.baseUrl + '/api' + '/getinfo';
+    return this.http.post<InfoModel>(url,{loginId: id,password: pwd}).pipe(map(data => {
       return data;
     }))
   }

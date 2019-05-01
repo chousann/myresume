@@ -28,13 +28,13 @@ export class AplData {
     this.email = "email";
     this.wechat = "wechat";
     this.github = "github";
-    this.info = new Info();
-    this.education = new Education();
-    this.job = new Job();
-    this.project = new Project();
-    this.skill = new Skill();
-    this.intention = new Intention();
-    this.selfevaluation = new Selfevaluation();
+    this.info = Info.resumelist;
+    this.education = Info.resumelist;
+    this.job = Info.resumelist;
+    this.project = Info.resumelist;
+    this.skill = Info.resumelist;
+    this.intention = Info.resumelist;
+    this.selfevaluation = Info.resumelist;
   }
   name: string;
   sex: string;
@@ -45,18 +45,17 @@ export class AplData {
   email: string;
   wechat: string;
   github: string;
-  info: Info;
-  education: Education;
-  job: Job;
-  project: Project;
-  skill: Skill;
-  intention: Intention;
-  selfevaluation: Selfevaluation
+  info: ResumeItem[];
+  education: ResumeItem[];
+  job: ResumeItem[];
+  project: ResumeItem[];
+  skill: ResumeItem[];
+  intention: ResumeItem[];
+  selfevaluation: ResumeItem[]
 }
 
 export class Info {
-  constructor() {
-    this.resumelist = [
+  static resumelist: ResumeItem[] = [
       {
         index: '1',
         type: '学校名称',
@@ -93,267 +92,8 @@ export class Info {
         descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
       }
     ]
-  }
-  resumelist: ResumeItem[];
 }
 
-export class Education {
-  constructor() {
-    this.resumelist = [
-      {
-        index: '1',
-        type: '学校名称',
-        descri: '江苏科技大学'
-      },
-      {
-        index: '2',
-        type: '就读时间',
-        descri: '2016年7月至今'
-      },
-      {
-        index: '3',
-        type: '所学专业',
-        descri: 'se'
-      },
-      {
-        index: '4',
-        type: '学历学位',
-        descri: 'yyyy'
-      },
-      {
-        index: '5',
-        type: '工作描述',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '6',
-        type: '工作职责',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '7',
-        type: '完成业绩',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      }
-    ]
-  }
-  resumelist: ResumeItem[];
-}
-
-export class Job {
-  constructor() {
-    this.resumelist = [
-      {
-        index: '1',
-        type: '学校名称',
-        descri: '江苏科技大学'
-      },
-      {
-        index: '2',
-        type: '就读时间',
-        descri: '2016年7月至今'
-      },
-      {
-        index: '3',
-        type: '所学专业',
-        descri: 'se'
-      },
-      {
-        index: '4',
-        type: '学历学位',
-        descri: 'yyyy'
-      },
-      {
-        index: '5',
-        type: '工作描述',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '6',
-        type: '工作职责',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '7',
-        type: '完成业绩',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      }
-    ]
-  }
-  resumelist: ResumeItem[];
-}
-
-export class Project {
-  constructor() {
-    this.resumelist = [
-      {
-        index: '1',
-        type: '学校名称',
-        descri: '江苏科技大学'
-      },
-      {
-        index: '2',
-        type: '就读时间',
-        descri: '2016年7月至今'
-      },
-      {
-        index: '3',
-        type: '所学专业',
-        descri: 'se'
-      },
-      {
-        index: '4',
-        type: '学历学位',
-        descri: 'yyyy'
-      },
-      {
-        index: '5',
-        type: '工作描述',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '6',
-        type: '工作职责',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '7',
-        type: '完成业绩',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      }
-    ]
-  }
-  resumelist: ResumeItem[];
-}
-
-export class Skill {
-  constructor() {
-    this.resumelist = [
-      {
-        index: '1',
-        type: '学校名称',
-        descri: '江苏科技大学'
-      },
-      {
-        index: '2',
-        type: '就读时间',
-        descri: '2016年7月至今'
-      },
-      {
-        index: '3',
-        type: '所学专业',
-        descri: 'se'
-      },
-      {
-        index: '4',
-        type: '学历学位',
-        descri: 'yyyy'
-      },
-      {
-        index: '5',
-        type: '工作描述',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '6',
-        type: '工作职责',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '7',
-        type: '完成业绩',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      }
-    ]
-  }
-  resumelist: ResumeItem[];
-}
-
-export class Intention {
-  constructor() {
-    this.resumelist = [
-      {
-        index: '1',
-        type: '学校名称',
-        descri: '江苏科技大学'
-      },
-      {
-        index: '2',
-        type: '就读时间',
-        descri: '2016年7月至今'
-      },
-      {
-        index: '3',
-        type: '所学专业',
-        descri: 'se'
-      },
-      {
-        index: '4',
-        type: '学历学位',
-        descri: 'yyyy'
-      },
-      {
-        index: '5',
-        type: '工作描述',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '6',
-        type: '工作职责',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '7',
-        type: '完成业绩',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      }
-    ]
-  }
-  resumelist: ResumeItem[];
-}
-
-export class Selfevaluation {
-  constructor() {
-    this.resumelist = [
-      {
-        index: '1',
-        type: '学校名称',
-        descri: '江苏科技大学'
-      },
-      {
-        index: '2',
-        type: '就读时间',
-        descri: '2016年7月至今'
-      },
-      {
-        index: '3',
-        type: '所学专业',
-        descri: 'se'
-      },
-      {
-        index: '4',
-        type: '学历学位',
-        descri: 'yyyy'
-      },
-      {
-        index: '5',
-        type: '工作描述',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '6',
-        type: '工作职责',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      },
-      {
-        index: '7',
-        type: '完成业绩',
-        descri: '上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司上海海隆软件有限公司'
-      }
-    ]
-  }
-  resumelist: ResumeItem[];
-}
 export class ResumeItem {
 
   constructor() {
